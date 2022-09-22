@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Registration Form</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="full-page">
+      <div id="image-half">
+        <img id="profile" src="./login-devrev.webp" alt="" />
+      </div>
+      <div id="form-half">
+        <!-- <div id="company-logo">
+            <img src="./devrev-logo-white.webp" alt="" style="width: 10%;">
+        </div> -->
+        <div id="company-info">
+            <div id="">Welcome to DevRev</div>
+        </div>
+        <div class="Registration">
+          <form action="" class="reg-form">
+            <table>
+              <tr class="form-row">
+                <td class="labels"><label for="name">Name:</label></td>
+                <td class="input-data">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr class="form-row">
+                <td class="labels"><label for="email">Email:</label></td>
+                <td class="input-data">
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr class="form-row">
+                <td class="labels"><label for="password">Password:</label></td>
+                <td class="input-data"><input type="password" name="password" id="password" required/></td>
+              </tr>
+              <tr class="form-row">
+                <td class="labels">
+                  <label for="password">Confirm Password:</label>
+                </td>
+                <td class="input-data">
+                  <input type="password" name="cpassword" id="cpassword" required/>
+                </td>
+              </tr>
+              <tr class="form-row">
+                <td class="labels">
+                  <label for="phoneNumber">Phone Number:</label>
+                </td>
+                <td class="input-data">
+                  <input type="number" name="phoneNumber" id="˳˳" required/>
+                </td>
+              </tr>
+              <tr class="form-row">
+                <td class="labels"><label for="gender">Gender:</label></td>
+                <td class="input-data">
+                  Male:
+                  <input type="radio" name="gender" value="male" id="gender" class=""/> Female:
+                  <input type="radio" name="gender" value="female"  id="gender"class=""/> Other:
+                  <input type="radio" name="gender" value="other"  id="gender"class="" />
+                </td>
+              </tr>
+              <tr class="form-row">
+                <td class="labels">
+                  <label for="adhaar">Adhaar Number:</label>
+                </td>
+                <td class="input-data">
+                  <input type="number" name="adhaar-number" id="adhaar-number" required/>
+                </td>
+              </tr>
+              <tr class="form-row">
+                <td class="labels">
+                  <label for="account-number">Account Number: </label>
+                </td>
+                <td class="input-data">
+                    <input type="number" name="account-number" id="account-number"/>
+                </td>
+              </tr>
+              <tr class="form-row">
+                <td class="labels">
+                  <label for="pan-card">PAN Card Number: </label>
+                </td>
+                <td class="input-data">
+                    <input type="number" name="pan-card-number" id="pan-card-number"/>
+                </td>
+              </tr>
+              <tr class="form-row">
+                <td class="labels"><label for="Address">Address:</label></td>
+                <td class="input-data">
+                  <textarea
+                    name="about"
+                    id="about"
+                    placeholder="Your Residential Address..."
+                  ></textarea>
+                </td>
+              </tr>
+              <tr class="form-row">
+                <td class="labels"><label for="pincode">Pin Code:</label></td>
+                <td class="input-data"><input type="number" name="pincode" id="pincode" /></td>
+              </tr>
+
+              <tr class="form-row">
+                <td class="labels"><label for="about">About:</label></td>
+                <td class="input-data">
+                  <textarea
+                    name="about"
+                    id="about"
+                    placeholder="Write about yourself..."
+                  ></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="submit" class="submit" value="Register" />
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./dist/index.js"></script>
+  </body>
+</html>
