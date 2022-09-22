@@ -26,8 +26,7 @@ function formSubmitHandler(event : any) {
 
 
   if (!email.match(emailFormat)) {
-    alert(`${email} Invalid Email id`);
-    return;
+    
   }
 
   if (!validAadharId(aadharCard)) {
@@ -42,7 +41,10 @@ function formSubmitHandler(event : any) {
     );
     return;
   }
-
+  if(!validaccountNumber(accountNumber)){
+    const invalid = <HTMLInputElement>document.createElement("td").appendChild(document.createElement(""))
+    
+  }
 
   if (!validPhoneNumber(phoneNumber)) {
     alert(

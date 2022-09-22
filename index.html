@@ -13,9 +13,9 @@
         <img id="profile" src="./login-devrev.webp" alt="" />
       </div>
       <div id="form-half">
-        <!-- <div id="company-logo">
+        <div id="company-logo">
             <img src="./devrev-logo-white.webp" alt="" style="width: 10%;">
-        </div> -->
+        </div>
         <div id="company-info">
             <div id="">Welcome to DevRev</div>
         </div>
@@ -63,16 +63,18 @@
                   <label for="phoneNumber">Phone Number:</label>
                 </td>
                 <td class="input-data">
-                  <input type="number" name="phoneNumber" id="˳˳" required/>
+                  <input type="number" name="phoneNumber" id="phoneNumber" required/>
                 </td>
               </tr>
               <tr class="form-row">
                 <td class="labels"><label for="gender">Gender:</label></td>
                 <td class="input-data">
-                  Male:
-                  <input type="radio" name="gender" value="male" id="gender" class=""/> Female:
-                  <input type="radio" name="gender" value="female"  id="gender"class=""/> Other:
-                  <input type="radio" name="gender" value="other"  id="gender"class="" />
+                  <div>Male:
+                  <input type="radio" name="gender" value="male" id="gender" class=""/></div>
+                  <div>Female:
+                  <input type="radio" name="gender" value="female"  id="gender"class=""/></div> 
+                  <div>Other:
+                    <input type="radio" name="gender" value="other"  id="gender"class="" /></div>
                 </td>
               </tr>
               <tr class="form-row">
@@ -84,7 +86,7 @@
                 </td>
               </tr>
               <tr class="form-row">
-                <td class="labels">
+                <td class="labels" id="account-number">
                   <label for="account-number">Account Number: </label>
                 </td>
                 <td class="input-data">

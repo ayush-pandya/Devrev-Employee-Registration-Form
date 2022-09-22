@@ -21,8 +21,6 @@ function formSubmitHandler(event) {
         return;
     }
     if (!email.match(emailFormat)) {
-        alert(`${email} Invalid Email id`);
-        return;
     }
     if (!validAadharId(aadharCard)) {
         alert(`${aadharCard} Invalid Aadhar id.`);
