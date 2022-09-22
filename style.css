@@ -73,7 +73,7 @@ body{
 }
 #image-half{
     max-width: 50%;
-    max-height: 90%;
+    /* max-height: 0%; */
     /* width: 50%; */
 }
 #profile{
@@ -141,9 +141,14 @@ table{
         flex-direction: column;
         flex-wrap: wrap;
     }
-  }
-@media only screen and (max-height: 960px) {
     #image-half{
         display: none;
     }
+  }
+@media only screen and (max-height: 960px) {
+    
+  }
+  .input-data:has(.gender-radio){
+    /* display: inline-block; */
+    display: flex;
   }
