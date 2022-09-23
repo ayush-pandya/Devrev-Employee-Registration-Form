@@ -38,10 +38,10 @@ function formSubmitHandler(event) {
     const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!validName(name) || name == "") {
         console.log(name);
-        messages.push("<span class='wrong'>&#10539</span> Invalid Name");
+        messages.push("<span class='wrong' id='wrong-name'>&#10539</span> Invalid Name");
     }
     else {
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='right-name'>&#10003</span>");
     }
     console.log("Email");
     if (!email.match(emailFormat)) {
