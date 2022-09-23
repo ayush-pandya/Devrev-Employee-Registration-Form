@@ -65,7 +65,7 @@ function formSubmitHandler(event) {
         messages.push("<span class='wrong' id='wrong-phoneNumber'>&#10539</span> Invalid");
     }
     else {
-        messages.push("<span class='right' id='right-phoneNumber>&#10003</span>");
+        messages.push("<span class='right' id='right-phoneNumber'>&#10003</span>");
     }
     if (gender != "") {
         messages.push("<span  class='right'>&#10003</span>");
@@ -92,10 +92,10 @@ function formSubmitHandler(event) {
         messages.push("<span class='right' id='right-panCard'>&#10003</span>");
     }
     if (address != "") {
-        messages.push("<span class='right' id='wrong-address'>&#10003</span>");
+        messages.push("<span class='right' id='right-address'>&#10003</span>");
     }
     else {
-        messages.push("<span class='wrong' id='right-address'>&#10539</span> Empty");
+        messages.push("<span class='wrong' id='wrong-address'>&#10539</span> Empty");
     }
     if (!validPinCode(pinCode)) {
         messages.push("<span class='wrong' id='wrong-pincode'>&#10539</span> Invalid pin code ");
@@ -104,10 +104,10 @@ function formSubmitHandler(event) {
         messages.push("<span class='right' id='right-pincode'>&#10003</span>");
     }
     if (about != "") {
-        messages.push("<span class='right' id='wrong-about'>&#10003</span>");
+        messages.push("<span class='right' id='right-about'>&#10003</span>");
     }
     else {
-        messages.push("<span class='wrong' id='right-about'> Empty");
+        messages.push("<span class='wrong' id='wrong-about'> Empty");
     }
     if (messages.length > 0) {
         event.preventDefault();
