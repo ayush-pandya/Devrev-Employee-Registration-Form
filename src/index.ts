@@ -142,7 +142,7 @@ function formSubmitHandler(event : any) {
     gender,
   );
   
-
+  return;
   function validPhoneNumber(phoneNumber: string): boolean {
     const NUMBER_OF_DIGITS = 10;
   
