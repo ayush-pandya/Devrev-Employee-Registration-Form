@@ -23,7 +23,7 @@ function formSubmitHandler(event : any) {
       return patt.test(acNumber);
   }
   function validPinCode(pinCode: string) {
-    const pinFormat = /^([0-9](6,6)+)$/;
+    const pinFormat =/^(\d{4}|\d{6})$/;
       return pinFormat.test(pinCode);
   }
   // function getGenderInput(genderInput:string) {

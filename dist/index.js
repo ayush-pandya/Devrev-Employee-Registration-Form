@@ -17,7 +17,7 @@ function formSubmitHandler(event) {
         return patt.test(acNumber);
     }
     function validPinCode(pinCode) {
-        const pinFormat = /^([0-9](6,6)+)$/;
+        const pinFormat = /^(\d{4}|\d{6})$/;
         return pinFormat.test(pinCode);
     }
     const name = getInputUsingID("name");
