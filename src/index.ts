@@ -58,26 +58,26 @@ function formSubmitHandler(event : any) {
     }
     console.log("Email");
     if (!email.match(emailFormat)) {
-        messages.push("<span class='wrong'>&#10539</span> Invalid Email");
+        messages.push("<span class='wrong' id='wrong-email'>&#10539</span> Invalid Email");
     }
     else {
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='right-email'>&#10003</span>");
     }
     if(password != ""){
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='wrong-password'>&#10003</span>");
     }else{
-        messages.push("<span class='wrong'>&#10539</span> Empty");
+        messages.push("<span class='wrong' id='right-password'>&#10539</span> Empty");
     }
     if(cpassword != ""){
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='wrong-cpassword'>&#10003</span>");
     }else{
-        messages.push("<span class='wrong'>&#10539</span> Empty");
+        messages.push("<span class='wrong' id='right-cpassword'>&#10539</span> Empty");
     }
     if (!validPhoneNumber(phoneNumber)) {
-        messages.push("<span class='wrong'>&#10539</span> Invalid");
+        messages.push("<span class='wrong' id='wrong-phoneNumber'>&#10539</span> Invalid");
     }
     else {
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='right-phoneNumber>&#10003</span>");
     }
     if(gender != ""){
       messages.push("<span  class='right'>&#10003</span>");
@@ -85,40 +85,40 @@ function formSubmitHandler(event : any) {
       messages.push("<span class='wrong'>&#10539</span>Enter your gender");
     }
     if (!validAadharId(aadharCard)) {
-        messages.push("<span class='wrong'>&#10539</span> Invalid Aadhar Number");
+        messages.push("<span class='wrong' id='wrong-adhaar'>&#10539</span> Invalid Aadhar Number");
     }
     else {
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='right-adhaar'>&#10003</span>");
     }
     if (!validAccountNumber(accountNumber)) {
-        messages.push("<span class='wrong'>&#10539</span> Invalid Account Number");
+        messages.push("<span class='wrong' id='wrong-accountNumber'>&#10539</span> Invalid Account Number");
     }
     else {
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='right-accountNumber'>&#10003</span>");
     }
     if (!validPanCard(panCard)) {
-        messages.push("<span class='wrong'>&#10539</span> Invalid Pan Card");
+        messages.push("<span class='wrong' id='wrong-panCard'>&#10539</span> Invalid Pan Card");
     }
     else {
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='right-panCard'>&#10003</span>");
     }
     
     if (address != "") {
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='wrong-address'>&#10003</span>");
     }
     else {
-        messages.push("<span class='wrong'>&#10539</span> Empty");
+        messages.push("<span class='wrong' id='right-address'>&#10539</span> Empty");
     }
     if (!validPinCode(pinCode)) {
-        messages.push("<span class='wrong'>&#10539</span> Invalid pin code ");
+        messages.push("<span class='wrong' id='wrong-pincode'>&#10539</span> Invalid pin code ");
     }
     else {
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='right-pincode'>&#10003</span>");
     }
     if(about != ""){
-        messages.push("<span class='right'>&#10003</span>");
+        messages.push("<span class='right' id='wrong-about'>&#10003</span>");
     }else{
-        messages.push("<span class='wrong'> Empty");
+        messages.push("<span class='wrong' id='right-about'> Empty");
     }
     if (messages.length > 0) {
         event.preventDefault();
