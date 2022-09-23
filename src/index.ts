@@ -1,11 +1,147 @@
-const form = document.querySelector(".reg-form");
-
+const form = <HTMLInputElement>document.getElementById("reg-form");
+const errorElement = <HTMLInputElement>document.getElementById('error');
+console.log(form,errorElement);
+form?.addEventListener('submit', formSubmitHandler);
 function formSubmitHandler(event : any) {
+  
+  // var messages:string[] = []
+  var messages:string[] = []
   function getInputUsingID(id: string): string {
-    const inputElement = <HTMLInputElement>document.getElementById(id);
+    var inputElement = <HTMLInputElement>document.getElementById(id);
+    console.log(inputElement.value,id);
+    if(inputElement == null){
+      inputElement = <HTMLInputElement>document.createElement("div");
+    }
     return inputElement.value.trim();
   }
-  event.preventDefault();
+  
+
+  
+  
+  function validAccountNumber(acNumber: string) {
+    const patt = /^([0-9]{11})|([0-9]{2}-[0-9]{3}-[0-9]{6})$/;
+      return patt.test(acNumber);
+  }
+  function validPinCode(pinCode: string) {
+    const pinFormat = /^([0-9](6,6)+)$/;
+      return pinFormat.test(pinCode);
+  }
+
+  
+
+  const name = getInputUsingID("name");
+    const email = getInputUsingID("email");
+    const password = getInputUsingID("password");
+    const cpassword = getInputUsingID("cpassword");
+    const phoneNumber = getInputUsingID("phoneNumber");
+    const gender = getInputUsingID("gender");
+    const aadharCard = getInputUsingID("adhaar-number");
+    const accountNumber = getInputUsingID("account-number");
+    const panCard = getInputUsingID("pan-card-number");
+    const address = getInputUsingID("address");
+    const pinCode = getInputUsingID("pincode");
+    const about = getInputUsingID("about");
+  const rows = document.getElementsByClassName("form-row");
+  console.log(rows);
+    const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!validName(name) || name == "") {
+        console.log(name);
+        messages.push("<span class='wrong'>&#10539</span> Invalid Name");
+    }
+    else {
+        messages.push("<span class='right'>&#10003</span>");
+    }
+    console.log("Email");
+    if (!email.match(emailFormat)) {
+        messages.push("<span class='wrong'>&#10539</span> Invalid Email");
+    }
+    else {
+        messages.push("<span class='right'>&#10003</span>");
+    }
+    if(password != ""){
+        messages.push("<span class='right'>&#10003</span>");
+    }else{
+        messages.push("<span class='wrong'>&#10539</span> Empty");
+    }
+    if(cpassword != ""){
+        messages.push("<span class='right'>&#10003</span>");
+    }else{
+        messages.push("<span class='wrong'>&#10539</span> Empty");
+    }
+    if (!validPhoneNumber(phoneNumber)) {
+        messages.push("<span class='wrong'>&#10539</span> Invalid");
+    }
+    else {
+        messages.push("<span class='right'>&#10003</span>");
+    }
+    if(gender != ""){
+      messages.push("<span  class='right'>&#10003</span>");
+    }else{
+      messages.push("<span class='wrong'>&#10539</span>Enter your gender");
+    }
+    if (!validAadharId(aadharCard)) {
+        messages.push("<span class='wrong'>&#10539</span> Invalid Aadhar Number");
+    }
+    else {
+        messages.push("<span class='right'>&#10003</span>");
+    }
+    if (!validAccountNumber(accountNumber)) {
+        messages.push("<span class='wrong'>&#10539</span> Invalid Account Number");
+    }
+    else {
+        messages.push("<span class='right'>&#10003</span>");
+    }
+    if (!validPanCard(panCard)) {
+        messages.push("<span class='wrong'>&#10539</span> Invalid Pan Card");
+    }
+    else {
+        messages.push("<span class='right'>&#10003</span>");
+    }
+    
+    if (address != "") {
+        messages.push("<span class='right'>&#10003</span>");
+    }
+    else {
+        messages.push("<span class='wrong'>&#10539</span> Empty");
+    }
+    if (!validPinCode(pinCode)) {
+        messages.push("<span class='wrong'>&#10539</span> Invalid pin code ");
+    }
+    else {
+        messages.push("<span class='right'>&#10003</span>");
+    }
+    if(about != ""){
+        messages.push("<span class='right'>&#10003</span>");
+    }else{
+        messages.push("<span class='wrong'> Empty");
+    }
+    if (messages.length > 0) {
+        event.preventDefault();
+        var messagesTag = "";
+        for (let i = 0;i<12;i++) {
+            // rows[i].appendChild(<HTMLInputElement>document.innerHTML());
+            const tds = <HTMLElement>document.createElement("td");
+            tds.className = "message";
+            tds.innerHTML =messages[i];
+            rows[i].appendChild(tds);
+            // rows[i].appendChild(<HTMLInputElement>document.cer))
+            // ("document.<td class='message'>" + + "</td>");
+            console.log(rows);
+        }
+        errorElement.innerHTML = messagesTag;
+    }
+    console.log(name, aadharCard, panCard, phoneNumber, email, gender);
+  // alert("Success");
+
+  console.log(
+    name,
+    aadharCard,
+    panCard,
+    phoneNumber,
+    email,
+    gender,
+  );
+  
 
   function validPhoneNumber(phoneNumber: string): boolean {
     const NUMBER_OF_DIGITS = 10;
@@ -56,84 +192,6 @@ function formSubmitHandler(event : any) {
   
     return true;
   }
-  
-  function validAccountNumber(acNumber: string) {
-    const patt = /^([0-9]{11})|([0-9]{2}-[0-9]{3}-[0-9]{6})$/;
-      return patt.test(acNumber);
-  }
-  function validPinCode(pinCode: string) {
-    const pinFormat = /^([0-9](6,6)+$/;
-
-      return pinFormat.test(pinCode);
-  }
-
-  
-
-  const name = getInputUsingID("name");
-  const email = getInputUsingID("email");
-  const aadharCard = getInputUsingID("adhaar-number");
-  const panCard = getInputUsingID("pan-card-number");
-  const phoneNumber = getInputUsingID("phoneNumber");
-  const accountNumber = getInputUsingID("account-number");
-  const pinCode = getInputUsingID("pincode");
-  const gender = getInputUsingID("gender");
-  const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
- 
-  if (!validName(name)) {
-    alert(`${name} Invalid first. Should contain only aplhabet.)`);
-    return;
-  }
-
-
-  if (!email.match(emailFormat)) {
-    alert(
-      `${email} Invalid Email.`
-    );
-    return;
-  }
-
-  if (!validAadharId(aadharCard)) {
-    alert(
-      `${aadharCard} Invalid Aadhar Numeber.`
-    );
-    return;
-  }
-  if (!validPanCard(panCard)) {
-    alert(
-      `${panCard} Invalid Pan Card.`
-    );
-    return;
-  }
-  if(!validAccountNumber(accountNumber)){
-    // const invalid = <HTMLInputElement>document.createElement("td");
-    alert(
-      `${accountNumber} Invalid Account Number`
-    );
-  }
-
-  if (!validPhoneNumber(phoneNumber)) {
-    alert(
-      `${phoneNumber} Invalid phone number(Not 10 digit numebr)`
-    );
-    return;
-  }
-  if (!validPinCode(pinCode)) {
-    alert(
-      `${pinCode} Invalid phone number(Not 10 digit numebr)`
-    );
-    return;
-  }
-
-  alert("Success");
-
-  console.log(
-    name,
-    aadharCard,
-    panCard,
-    phoneNumber,
-    email,
-    gender,
-  );
 }
 
 
