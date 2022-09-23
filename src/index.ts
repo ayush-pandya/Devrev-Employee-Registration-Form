@@ -64,14 +64,14 @@ function formSubmitHandler(event : any) {
         messages.push("<span class='right' id='right-email'>&#10003</span>");
     }
     if(password != ""){
-        messages.push("<span class='right' id='wrong-password'>&#10003</span>");
+        messages.push("<span class='right' id='right-password'>&#10003</span>");
     }else{
-        messages.push("<span class='wrong' id='right-password'>&#10539</span> Empty");
+        messages.push("<span class='wrong' id='wrong-password'>&#10539</span> Empty");
     }
     if(cpassword != ""){
-        messages.push("<span class='right' id='wrong-cpassword'>&#10003</span>");
+        messages.push("<span class='right' id='right-cpassword'>&#10003</span>");
     }else{
-        messages.push("<span class='wrong' id='right-cpassword'>&#10539</span> Empty");
+        messages.push("<span class='wrong' id='wrong-cpassword'>&#10539</span> Empty");
     }
     if (!validPhoneNumber(phoneNumber)) {
         messages.push("<span class='wrong' id='wrong-phoneNumber'>&#10539</span> Invalid");
