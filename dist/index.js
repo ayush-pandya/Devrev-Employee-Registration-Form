@@ -7,7 +7,6 @@ function formSubmitHandler(event) {
     var messages = [];
     function getInputUsingID(id) {
         var inputElement = document.getElementById(id);
-        console.log(inputElement.value, id);
         if (inputElement == null) {
             inputElement = document.createElement("div");
         }
@@ -26,7 +25,7 @@ function formSubmitHandler(event) {
     const password = getInputUsingID("password");
     const cpassword = getInputUsingID("cpassword");
     const phoneNumber = getInputUsingID("phoneNumber");
-    const gender = getInputUsingID("gender");
+    const gender = getInputUsingID("female-gender");
     const aadharCard = getInputUsingID("adhaar-number");
     const accountNumber = getInputUsingID("account-number");
     const panCard = getInputUsingID("pan-card-number");
@@ -122,9 +121,10 @@ function formSubmitHandler(event) {
         }
         errorElement.innerHTML = messagesTag;
     }
-    console.log(name, aadharCard, panCard, phoneNumber, email, gender);
-    console.log(name, aadharCard, panCard, phoneNumber, email, gender);
-    return;
+    else {
+        console.log(name, aadharCard, panCard, phoneNumber, email, gender);
+        console.log(name, aadharCard, panCard, phoneNumber, email, gender);
+    }
     function validPhoneNumber(phoneNumber) {
         const NUMBER_OF_DIGITS = 10;
         if (phoneNumber.length != NUMBER_OF_DIGITS ||
