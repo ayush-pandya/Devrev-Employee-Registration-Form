@@ -124,6 +124,7 @@ function formSubmitHandler(event) {
     }
     console.log(name, aadharCard, panCard, phoneNumber, email, gender);
     console.log(name, aadharCard, panCard, phoneNumber, email, gender);
+    return;
     function validPhoneNumber(phoneNumber) {
         const NUMBER_OF_DIGITS = 10;
         if (phoneNumber.length != NUMBER_OF_DIGITS ||
